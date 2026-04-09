@@ -1,0 +1,40 @@
+<% layout("layouts/boilerplate") %>
+<div id="cluster-map"></div>
+    <h1>All Gyms</h1>
+    <div>
+        <a href="/gyms/new">New Gym</a>
+    </div>
+    <% for(let gym of gyms) { %>
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-4">
+                <img crossorigin="anonymous" class="img-fluid" alt="" src="<%=gym.images[0].url%>">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= gym.name %>
+                        </h5>
+                        <p class="card-text">
+                            <%= gym.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= gym.location %>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/gyms/<%= gym.id %>">View <%= gym.name %></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+        <script>
+            const maptilerApiKey = "<%- process.env.MAPTILER_API_KEY %>";
+            const gyms = {
+                type: 'FeatureCollection',
+                features: <%- gymsGeoJSON %>
+            };
+        </script>
+        <script src="/javascripts/clusterMap.js"></script>
