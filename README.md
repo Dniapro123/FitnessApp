@@ -31,7 +31,7 @@ P.S. - access to server services can be expired
 
 ---
 
-## 🏗 System Architecture
+##  System Architecture
 
 The project follows the **MVC (Model-View-Controller)** design pattern to ensure clean code separation, scalability, and maintainability.
 
@@ -45,7 +45,7 @@ The project follows the **MVC (Model-View-Controller)** design pattern to ensure
 
 ---
 
-## 🛠 Features & Functionality
+##  Features & Functionality
 
 ### 1. User Authentication & Authorization
 * Secure registration and login using **Passport.js**.
@@ -72,7 +72,7 @@ The project follows the **MVC (Model-View-Controller)** design pattern to ensure
 
 ---
 
-## ⚙️ Local Setup
+##  Local Setup
 
 1. **Clone the repository:**
    ```bash
